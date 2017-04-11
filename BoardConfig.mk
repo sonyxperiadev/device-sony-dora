@@ -18,6 +18,9 @@ TARGET_BOOTLOADER_BOARD_NAME := F8131
 
 WIFI_BUS := PCIE
 
+# NFC
+NXP_CHIP_TYPE := PN547C2
+
 BOARD_KERNEL_CMDLINE += androidboot.hardware=dora
 
 #TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/clearpad/wakeup_gesture"
