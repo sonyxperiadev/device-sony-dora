@@ -24,4 +24,9 @@ NXP_CHIP_TYPE_FW := PN547C2
 
 BOARD_KERNEL_CMDLINE += androidboot.hardware=dora
 
+# Recovery config
+BOARD_SONY_INIT_FLAGS += -DDEV_BLOCK_FOTA_NUM="45"
+BOARD_SONY_INIT_FLAGS += -DDEV_BLOCK_FOTA_MAJOR="259"
+BOARD_SONY_INIT_FLAGS += -DDEV_BLOCK_FOTA_MINOR="13"
+
 #TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/clearpad/wakeup_gesture"
