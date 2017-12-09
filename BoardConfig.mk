@@ -34,4 +34,8 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 7843348480
 # Reserve space for data encryption (22187868160-16384)
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 22187851776
 
-#TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/clearpad/wakeup_gesture"
+# Setting for tap to wake
+TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/clearpad/wakeup_gesture"
+
+#Enable Dex preoptimization
+WITH_DEXPREOPT := true
