@@ -28,6 +28,9 @@ PRODUCT_COPY_FILES := \
     $(DEVICE_PATH)/rootdir/system/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
     $(DEVICE_PATH)/rootdir/system/etc/mixer_paths.xml:system/etc/mixer_paths.xml
 
+#Opengapps packages
+GAPPS_VARIANT := stock
+
 # Camera Configuration
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/system/etc/camera/camera_config.xml:system/etc/camera/camera_config.xml \
@@ -101,3 +104,6 @@ $(call inherit-product-if-exists, vendor/sony/tone-common/tone-partial.mk)
 
 # include optional vendor configuration
 $(call inherit-product-if-exists, vendor/qcom/proprietary/common/build/qcom-packages.mk)
+
+#include opengapps packages
+$(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
