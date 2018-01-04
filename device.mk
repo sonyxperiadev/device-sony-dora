@@ -68,6 +68,7 @@ PRODUCT_COPY_FILES += \
 
 # Device Init
 PRODUCT_PACKAGES += \
+    fstab.dora \
     init.recovery.dora \
     init.dora \
     ueventd.dora
