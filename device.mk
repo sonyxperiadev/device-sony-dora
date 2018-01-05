@@ -16,7 +16,7 @@
 DEVICE_PATH := device/sony/dora/rootdir
 
 DEVICE_PACKAGE_OVERLAYS += \
-    $(DEVICE_PATH)/overlay
+    device/sony/dora/overlay
 
 # Device Specific Permissions
 PRODUCT_COPY_FILES := \
@@ -64,7 +64,6 @@ PRODUCT_COPY_FILES += \
 # WIFI FW patch
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/vendor/firmware/bcmdhd.cal:$(TARGET_COPY_OUT_VENDOR)/firmware/bcmdhd.cal
-
 
 # Device Init
 PRODUCT_PACKAGES += \
