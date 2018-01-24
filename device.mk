@@ -31,6 +31,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/vendor/etc/thermanager.xml:$(TARGET_COPY_OUT_VENDOR)/etc/thermanager.xml
 
+#Opengapps packages
+GAPPS_VARIANT := stock
+
 # Camera Configuration
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/vendor/etc/camera/camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera_config.xml \
@@ -115,3 +118,6 @@ $(call inherit-product-if-exists, vendor/sony/tone-common/tone-partial.mk)
 
 # include optional vendor configuration
 $(call inherit-product-if-exists, vendor/qcom/proprietary/common/build/qcom-packages.mk)
+
+#include opengapps packages
+$(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
