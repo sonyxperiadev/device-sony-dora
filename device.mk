@@ -69,8 +69,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     fstab.dora \
     init.recovery.dora \
-    init.dora \
-    ueventd.dora
+    init.dora
 
 # Lights
 PRODUCT_PACKAGES += \
