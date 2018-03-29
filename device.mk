@@ -71,10 +71,6 @@ PRODUCT_PACKAGES += \
     init.recovery.dora \
     init.dora
 
-# Lights
-PRODUCT_PACKAGES += \
-    lights.dora
-
 # Simple PowerHAL
 PRODUCT_PACKAGES += \
     power.dora
