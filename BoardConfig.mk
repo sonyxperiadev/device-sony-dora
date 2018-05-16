@@ -14,7 +14,14 @@
 
 include device/sony/tone/PlatformConfig.mk
 
-TARGET_BOOTLOADER_BOARD_NAME := tone
+TARGET_BOOTLOADER_BOARD_NAME := unknown
+ifneq (,$(filter %f8131,$(TARGET_PRODUCT)))
+TARGET_BOOTLOADER_BOARD_NAME := F8131
+else ifneq (,$(filter %f8132,$(TARGET_PRODUCT)))
+TARGET_BOOTLOADER_BOARD_NAME := F8132
+else
+$(error Unrecognized value for TARGET_PRODUCT: "$(TARGET_PRODUCT)")
+endif
 
 # Platform
 PRODUCT_PLATFORM := tone
