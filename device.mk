@@ -75,10 +75,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.dora
 
-# NFC config
-PRODUCT_PACKAGES += \
-    nfc_nci.dora
-
 # Telephony Packages (AOSP)
 PRODUCT_PACKAGES += \
     InCallUI \
