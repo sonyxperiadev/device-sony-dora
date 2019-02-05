@@ -14,15 +14,6 @@
 
 include device/sony/tone/PlatformConfig.mk
 
-TARGET_BOOTLOADER_BOARD_NAME := unknown
-ifneq (,$(filter %f8131,$(TARGET_PRODUCT)))
-TARGET_BOOTLOADER_BOARD_NAME := F8131
-else ifneq (,$(filter %f8132,$(TARGET_PRODUCT)))
-TARGET_BOOTLOADER_BOARD_NAME := F8132
-else
-TARGET_BOOTLOADER_BOARD_NAME := F8131
-$(warning Unrecognized value for TARGET_PRODUCT: "$(TARGET_PRODUCT)", using default value: "$(TARGET_BOOTLOADER_BOARD_NAME)")
-endif
 
 # Platform
 PRODUCT_PLATFORM := tone
@@ -39,7 +30,20 @@ BOARD_KERNEL_CMDLINE += androidboot.hardware=dora
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 7843348480
+
 # Reserve space for data encryption (22187868160-16384)
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 22187851776
+
+TARGET_BOOTLOADER_BOARD_NAME := unknown
+ifneq (,$(filter %f8131,$(TARGET_PRODUCT)))
+TARGET_BOOTLOADER_BOARD_NAME := F8131
+else ifneq (,$(filter %f8132,$(TARGET_PRODUCT)))
+TARGET_BOOTLOADER_BOARD_NAME := F8132
+# Reserve space for data encryption (53456404480-16384)
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 53456388096
+else
+TARGET_BOOTLOADER_BOARD_NAME := F8131
+$(warning Unrecognized value for TARGET_PRODUCT: "$(TARGET_PRODUCT)", using default value: "$(TARGET_BOOTLOADER_BOARD_NAME)")
+endif
 
 #TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/clearpad/wakeup_gesture"
