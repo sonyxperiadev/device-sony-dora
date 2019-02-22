@@ -70,10 +70,6 @@ PRODUCT_PACKAGES += \
     init.recovery.dora \
     init.dora
 
-# Simple PowerHAL
-PRODUCT_PACKAGES += \
-    power.dora
-
 # Telephony Packages (AOSP)
 PRODUCT_PACKAGES += \
     InCallUI \
