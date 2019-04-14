@@ -15,6 +15,8 @@
 # Device path
 DEVICE_PATH := device/sony/dora/rootdir
 
+WIFI_DRIVER_BUILT := brcmfmac
+
 DEVICE_PACKAGE_OVERLAYS += \
     device/sony/dora/overlay
 
